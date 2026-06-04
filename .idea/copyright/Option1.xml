@@ -1,0 +1,6 @@
+<component name="CopyrightManager">
+  <copyright>
+    <option name="notice" value="/*&#10; * =============================================================================&#10; * Project    : &amp;#36;{project.name}&#10; * File       : &amp;#36;{file.fileName}&#10; * Created On : &amp;#36;{today.format(&quot;yyyy-MM-dd HH:mm&quot;)}&#10; * Author     : Wilson K Sam&#10; * Copyright  : (c) &amp;#36;{today.year} Wilson K Sam&#10; * =============================================================================&#10; *&#10; * Description:&#10; * This source file is part of a coding practice project created for learning,&#10; * experimentation, interview preparation, and demonstration of software&#10; * development concepts and best practices.&#10; *&#10;  * Purpose:&#10;  * - &#10; * Notes:&#10; * - &#10; *&#10; * =============================================================================&#10; */" />
+    <option name="myName" value="Option1" />
+  </copyright>
+</component>
