@@ -25,5 +25,5 @@
 package org.wilsonks.java_solid_principles.coffee_app;
 
 public interface CoffeeMachine {
-    Coffee brewCoffee (CoffeeSelection selection);
+    Coffee brewCoffee (CoffeeSelection selection, String size);
 }

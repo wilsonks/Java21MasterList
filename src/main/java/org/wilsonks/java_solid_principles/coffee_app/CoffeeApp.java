@@ -25,7 +25,6 @@
 package org.wilsonks.java_solid_principles.coffee_app;
 
 import java.util.HashMap;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class CoffeeApp {
     private final CoffeeMachine coffeeMachine;
@@ -34,10 +33,8 @@ public class CoffeeApp {
         this.coffeeMachine = coffeeMachine;
     }
 
-    public Coffee PrpareCoffee(CoffeeSelection selection) {
-        Coffee coffee = coffeeMachine.brewCoffee(selection);
-        System.out.println("Coffee is ready! " + coffee);
-        return coffee;
+    public Coffee PrpareCoffee(CoffeeSelection selection, String size) {
+        return coffeeMachine.brewCoffee(selection, size);
     }
 
     public static void main(String[] args) {
@@ -51,9 +48,15 @@ public class CoffeeApp {
 
         CoffeeMachine machine = new BasicCoffeeMachine(beans);
         CoffeeApp app = new CoffeeApp(machine);
-        app.PrpareCoffee(CoffeeSelection.ESPRESSO);
-        app.PrpareCoffee(CoffeeSelection.LATTE);
-        app.PrpareCoffee(CoffeeSelection.CAPPUCCINO);
-        app.PrpareCoffee(CoffeeSelection.AMERICANO);
+
+        Coffee coffee1 = app.PrpareCoffee(CoffeeSelection.LATTE, "Medium");
+        System.out.println(coffee1);
+        Coffee coffee2 = app.PrpareCoffee(CoffeeSelection.ESPRESSO, "Large");
+        System.out.println(coffee2);
+        Coffee coffee3 = app.PrpareCoffee(CoffeeSelection.CAPPUCCINO, "Small");
+        System.out.println(coffee3);
+        Coffee coffee4 = app.PrpareCoffee(CoffeeSelection.AMERICANO, "Medium");
+        System.out.println(coffee4);
+
     }
 }

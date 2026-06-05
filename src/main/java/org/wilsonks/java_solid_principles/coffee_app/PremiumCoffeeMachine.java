@@ -2,8 +2,8 @@
  *
  *  * =============================================================================
  *  * Project    : Java21MasterList
- *  * File       : BasicCoffeeMachine.java
- *  * Created On : 2026-06-04 12:12
+ *  * File       : PremiumCoffeeMachine.java
+ *  * Created On : 2026-06-04 13:08
  *  * Author     : Wilson K Sam
  *  * Copyright  : (c) 2026 Wilson K Sam
  *  * =============================================================================
@@ -26,23 +26,24 @@ package org.wilsonks.java_solid_principles.coffee_app;
 
 import java.util.HashMap;
 
-public class BasicCoffeeMachine implements CoffeeMachine {
+public class PremiumCoffeeMachine implements CoffeeMachine {
 
     private final HashMap<String, CoffeeBean> beans = new HashMap<>();
 
-    public BasicCoffeeMachine(HashMap<CoffeeSelection, CoffeeBean> beans) {
+    public PremiumCoffeeMachine(HashMap<CoffeeSelection, CoffeeBean> beans) {
         for (var entry : beans.entrySet()) {
             this.beans.put(entry.getKey().name(), entry.getValue());
         }
     }
 
     @Override
-    public Coffee brewCoffee(CoffeeSelection selection,  String size) {
+    public Coffee brewCoffee(CoffeeSelection selection, String size) {
         CoffeeBean bean = beans.get(selection.name());
         if (bean == null) {
             throw new IllegalArgumentException("No coffee bean found for selection: " + selection);
         }
-        // Simulate brewing process
-        return new Coffee(selection.name(), size, bean.toString());
+        // Simulate a more complex brewing process with additional features
+        String flavorProfile = "Enhanced flavor profile for " + bean.toString();
+        return new Coffee(selection.name(), size, flavorProfile);
     }
 }
