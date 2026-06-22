@@ -33,5 +33,6 @@ public class NewScheduledThreadPoolExample {
 
          scheduledExecutorService.schedule(() -> System.out.println("Task executed after 3 seconds"), 3, java.util.concurrent.TimeUnit.SECONDS);
          scheduledExecutorService.scheduleAtFixedRate(() -> System.out.println("Task executed every 2 seconds"), 0, 2, java.util.concurrent.TimeUnit.SECONDS);
+         scheduledExecutorService.scheduleWithFixedDelay(() -> System.out.println("Task executed with a delay of 1 second after the previous task"), 0, 1, java.util.concurrent.TimeUnit.SECONDS);
      }
 }
