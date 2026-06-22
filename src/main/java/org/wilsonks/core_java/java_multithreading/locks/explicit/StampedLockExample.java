@@ -26,7 +26,7 @@ package org.wilsonks.core_java.java_multithreading.locks.explicit;
 
 import java.util.concurrent.locks.StampedLock;
 
-public class StampledLockExample {
+public class StampedLockExample {
     public static void main(String[] args) throws InterruptedException {
         final StampedLock stampedLock = new StampedLock();
 
