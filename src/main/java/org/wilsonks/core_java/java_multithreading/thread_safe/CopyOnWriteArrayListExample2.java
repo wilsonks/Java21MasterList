@@ -3,7 +3,7 @@
  *  * =============================================================================
  *  * Project    : Java21MasterList
  *  * File       : CopyOnWriteArrayListExample2.java
- *  * Created On : 2026-06-04 10:09
+ *  * Created On : 2026-06-22 17:48
  *  * Author     : Wilson K Sam
  *  * Copyright  : (c) 2026 Wilson K Sam
  *  * =============================================================================
@@ -22,7 +22,7 @@
  *
  */
 
-package org.wilsonks.java_multithreading.thread_safe;
+package org.wilsonks.core_java.java_multithreading.thread_safe;
 
 import java.util.ArrayList;
 import java.util.Collections;

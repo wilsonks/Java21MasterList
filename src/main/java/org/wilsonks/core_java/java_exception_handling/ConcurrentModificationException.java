@@ -3,7 +3,7 @@
  *  * =============================================================================
  *  * Project    : Java21MasterList
  *  * File       : ConcurrentModificationException.java
- *  * Created On : 2026-06-04 10:17
+ *  * Created On : 2026-06-22 17:30
  *  * Author     : Wilson K Sam
  *  * Copyright  : (c) 2026 Wilson K Sam
  *  * =============================================================================
@@ -22,7 +22,7 @@
  *
  */
 
-package org.wilsonks.java_exception_handling;
+package org.wilsonks.core_java.java_exception_handling;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 

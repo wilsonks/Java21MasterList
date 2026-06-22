@@ -2,8 +2,8 @@
  *
  *  * =============================================================================
  *  * Project    : Java21MasterList
- *  * File       : AtomicIntegerExample.java
- *  * Created On : 2026-06-04 09:54
+ *  * File       : SynchronisedObject.java
+ *  * Created On : 2026-06-22 18:49
  *  * Author     : Wilson K Sam
  *  * Copyright  : (c) 2026 Wilson K Sam
  *  * =============================================================================
@@ -22,27 +22,34 @@
  *
  */
 
-package org.wilsonks.java_multithreading.thread_safe;
+package org.wilsonks.core_java.java_multithreading.locks.Implicit;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import lombok.Getter;
+import lombok.Setter;
 
-public class AtomicIntegerExample {
+@Getter
+@Setter
+public class SynchronisedObject{
+    private int count = 0;
 
-    private static AtomicInteger atomicIntegerCounter = new AtomicInteger(0);
-    private static Integer integerCounter = 0;
-
+    //Synchronized Methods
+    //● Intrinsic locks are built into Java and are associated with every object.
+    //The entire method is synchronized, and the lock is associated with the object (this)
+    public synchronized void increment(){
+            count++;
+    }
     public static void main(String[] args) throws InterruptedException {
+        SynchronisedObject obj = new SynchronisedObject();
+
         Thread t1 = new Thread(() -> {
             for (int i = 0; i < 1000; i++) {
-                atomicIntegerCounter.incrementAndGet();
-                integerCounter++;
+                obj.increment();
             }
         });
 
         Thread t2 = new Thread(() -> {
             for (int i = 0; i < 1000; i++) {
-                atomicIntegerCounter.incrementAndGet();
-                integerCounter++;
+                obj.increment();
             }
         });
 
@@ -52,7 +59,7 @@ public class AtomicIntegerExample {
         t1.join();
         t2.join();
 
-        System.out.println("Atomic Counter Value: " + atomicIntegerCounter.get());
-        System.out.println("Integer Counter Value: " + integerCounter);
+        System.out.println("Final Count: " + obj.getCount());
     }
+
 }

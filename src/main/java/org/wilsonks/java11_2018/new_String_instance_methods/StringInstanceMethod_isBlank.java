@@ -24,15 +24,35 @@
 
 package org.wilsonks.java11_2018.new_String_instance_methods;
 
+import java.util.Optional;
+
 public class StringInstanceMethod_isBlank {
 
     public static void main(String[] args) {
-        String str1 = "   ";
-        String str2 = "Hello";
-        String str3 = "";
+        //.isBlank()
+        System.out.println("  ".isBlank()); //true
+        System.out.println("".isBlank()); //true
+        //.strip(), .stripLeading(), .stripTrailing()
+        //Purpose: Removes leading and trailing whitespace, including Unicode whitespace.
+        //Difference from trim(): trim() only removes ASCII whitespace, while strip()
+        //handles Unicode whitespace.
+        System.out.println(" Hello World ".strip());//"Hello World"
+        System.out.println("  Hello World".stripLeading()); //"Hello World"
+        System.out.println("Hello World   ".stripTrailing()); //"Hello World"
+        //repeat(int count)
+        //● Purpose: Repeats the string a specified number of times.
+        System.out.println("Hello".repeat(2));//HelloHello
+        //lines()
+        //● Purpose: Converts the string into a Stream<String> of lines, split by line terminators
+        System.out.println("Line1\nLine2\nLine3\nLine4".lines().toList());//[Line1, Line2, Line3, Line4]
+        //transform(Function <String, R> fn)
+        //● Purpose: Applies a transformation function to the string.
+        System.out.println(Optional.of("hello world".transform(str -> Character.toUpperCase(str.charAt(0)) + str.substring(1))).get()); //Hello world
 
-        System.out.println("str1 is blank: " + str1.isBlank());
-        System.out.println("str2 is blank: " + str2.isBlank());
-        System.out.println("str3 is blank: " + str3.isBlank());
+        //chars() and codePoints()
+        //chars(): Returns an IntStream of the string's UTF-16 code units.
+        //codePoints(): Returns an IntStream of the string's Unicode code points.
+        "abcd".chars().forEach(System.out::println);//97,98,99,100
     }
+
 }

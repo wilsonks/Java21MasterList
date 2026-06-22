@@ -2,8 +2,8 @@
  *
  *  * =============================================================================
  *  * Project    : Java21MasterList
- *  * File       : ReentractLockClassExample.java
- *  * Created On : 2026-06-04 09:50
+ *  * File       : ReentrantLockExample.java
+ *  * Created On : 2026-06-22 17:48
  *  * Author     : Wilson K Sam
  *  * Copyright  : (c) 2026 Wilson K Sam
  *  * =============================================================================
@@ -22,7 +22,7 @@
  *
  */
 
-package org.wilsonks.java_multithreading.rentrant;
+package org.wilsonks.core_java.java_multithreading.rentrant;
 
 public class ReentrantLockExample {
 

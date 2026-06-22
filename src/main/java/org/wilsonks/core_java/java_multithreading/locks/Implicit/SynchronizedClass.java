@@ -2,8 +2,8 @@
  *
  *  * =============================================================================
  *  * Project    : Java21MasterList
- *  * File       : ConncurrentHashMapExample.java
- *  * Created On : 2026-06-04 09:55
+ *  * File       : SynchronizedClass.java
+ *  * Created On : 2026-06-22 18:55
  *  * Author     : Wilson K Sam
  *  * Copyright  : (c) 2026 Wilson K Sam
  *  * =============================================================================
@@ -22,38 +22,40 @@
  *
  */
 
-package org.wilsonks.java_multithreading.thread_safe;
+package org.wilsonks.core_java.java_multithreading.locks.Implicit;
 
-import java.util.HashMap;
-import java.util.concurrent.ConcurrentHashMap;
+public class SynchronizedClass {
+    private static int count = 0;
 
-public class ConcurrentHashMapExample {
+    //Synchronized Static Method
+    //● Intrinsic locks are built into Java and are associated with every object.
+    //The entire method is synchronized, and the lock is associated with the class (SynchronizedClass.class)
+    public static synchronized void increment(){
+            count++;
+    }
 
-    private static ConcurrentHashMap<String, Integer> map1 = new ConcurrentHashMap<>();
-    private static HashMap<String, Integer> map2 = new HashMap<>();
-
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         Thread t1 = new Thread(() -> {
             for (int i = 0; i < 1000; i++) {
-                map1.put("key" + i, i);
-                map2.put("key" + i, i);
+                SynchronizedClass.increment();
             }
         });
 
         Thread t2 = new Thread(() -> {
             for (int i = 0; i < 1000; i++) {
-                map1.put("key" + (i + 1000), i);
-                map2.put("key" + (i + 1000), i);
+                SynchronizedClass.increment();
             }
         });
 
         t1.start();
         t2.start();
 
-        t1.join();
-        t2.join();
-
-        System.out.println("ConcurrentHashMap Size: " + map1.size());
-        System.out.println("HashMap Size: " + map2.size());
+        try {
+            t1.join();
+            t2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(count);
     }
 }

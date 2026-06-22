@@ -3,7 +3,7 @@
  *  * =============================================================================
  *  * Project    : Java21MasterList
  *  * File       : ReentrantExample.java
- *  * Created On : 2026-06-04 09:27
+ *  * Created On : 2026-06-22 17:48
  *  * Author     : Wilson K Sam
  *  * Copyright  : (c) 2026 Wilson K Sam
  *  * =============================================================================
@@ -14,18 +14,15 @@
  *  * development concepts and best practices.
  *  *
  *   * Purpose:
- *   * - Reentrant Behavior (Preventing Self-Deadlock)
+ *   * -
  *  * Notes:
- *  * - Java's intrinsic locks (synchronized) are reentrant.
- *  This means that if a thread holds a lock on an object, it can re-enter any synchronized method of that object
- *  without blocking itself. This prevents self-deadlock scenarios where a thread would block itself by trying to
- *  acquire a lock it already holds.
+ *  * -
  *  *
  *  * =============================================================================
  *
  */
 
-package org.wilsonks.java_multithreading.rentrant;
+package org.wilsonks.core_java.java_multithreading.rentrant;
 
 public class ReentrantExample {
     // The same thread can enter both synchronized methods smoothly
