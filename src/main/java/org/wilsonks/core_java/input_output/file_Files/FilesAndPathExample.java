@@ -24,12 +24,32 @@
 
 package org.wilsonks.core_java.input_output.file_Files;
 
+import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class ReadWriteUsingFiles {
-    public static final String fileName = "sample.txt";
+public class FilesAndPathExample {
+    public static final String fileName = "example.txt";
+
     public static void main(String[] args) {
         Path path = Path.of(fileName);
-        System.out.println(path);
+        if (Files.exists(path)) {
+            try {
+                var content = Files.readAllLines(path);
+                content.forEach(System.out::println);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            try {
+                Files.writeString(path, """ 
+                        Hello, World!
+                        This is an example of writing to a file using Files.write.
+                        Line Number 3
+                        Line Number 4
+                        """);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }
