@@ -67,9 +67,7 @@ public static final String USE_CASE = """
 
                         // Print various thread details
                         System.out.println("Thread Name: " + currentThread.getName());
-                        System.out.println("Thread ID: " + currentThread.threadId()); // Use getId() for Java 19 or older
                         System.out.println("Thread Priority: " + currentThread.getPriority());
-                        System.out.println("Is Virtual Thread: " + currentThread.isVirtual()); // Available in Java 21+
                         System.out.println("-----------------------------------");
                     }
             );
@@ -88,9 +86,7 @@ public static final String USE_CASE = """
 
                         // Print various thread details
                         System.out.println("Thread Name: " + currentThread.getName());
-                        System.out.println("Thread ID: " + currentThread.threadId()); // Use getId() for Java 19 or older
                         System.out.println("Thread Priority: " + currentThread.getPriority());
-                        System.out.println("Is Virtual Thread: " + currentThread.isVirtual()); // Available in Java 21+
                         System.out.println("-----------------------------------");
                     }
             );

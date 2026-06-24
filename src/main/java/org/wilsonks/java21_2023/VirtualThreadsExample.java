@@ -27,17 +27,17 @@ package org.wilsonks.java21_2023;
 public class VirtualThreadsExample {
 
     public static void main(String[] args) {
-        Thread.startVirtualThread(() -> {
-            System.out.println("Hello from a virtual thread!");
-            String name = Thread.currentThread().getName();
-            System.out.println("Thread name: " + name);
-
-        });
-
-        Thread.ofPlatform().start(() -> {
-            System.out.println("Hello from a platform thread!");
-            String name = Thread.currentThread().getName();
-            System.out.println("Thread name: " + name);
-        });
+//        Thread.startVirtualThread(() -> {
+//            System.out.println("Hello from a virtual thread!");
+//            String name = Thread.currentThread().getName();
+//            System.out.println("Thread name: " + name);
+//
+//        });
+//
+//        Thread.ofPlatform().start(() -> {
+//            System.out.println("Hello from a platform thread!");
+//            String name = Thread.currentThread().getName();
+//            System.out.println("Thread name: " + name);
+//        });
     }
 }

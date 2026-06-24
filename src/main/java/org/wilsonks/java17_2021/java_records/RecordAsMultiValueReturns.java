@@ -30,19 +30,19 @@ import java.util.List;
 
 public class RecordAsMultiValueReturns {
 
-    public static MinMax getMinMix(List<Integer> values) {
-        Collections.sort(values);
-        return new MinMax(values.getFirst(), values.getLast());
-    }
-
-    public record MinMax(int min, int max) {}
-
-    public static void main(String[] args) {
-        List<Integer> values = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        System.out.println("Numbers:");
-        values.forEach(System.out::println);
-
-        System.out.println("Values:");
-        System.out.println("getMinMix(values) = " + getMinMix(values));
-    }
+//    public static MinMax getMinMix(List<Integer> values) {
+//        Collections.sort(values);
+//        return new MinMax(values.getFirst(), values.getLast());
+//    }
+//
+//    public record MinMax(int min, int max) {}
+//
+//    public static void main(String[] args) {
+//        List<Integer> values = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+//        System.out.println("Numbers:");
+//        values.forEach(System.out::println);
+//
+//        System.out.println("Values:");
+//        System.out.println("getMinMix(values) = " + getMinMix(values));
+//    }
 }
